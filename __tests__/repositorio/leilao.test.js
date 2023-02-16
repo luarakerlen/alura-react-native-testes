@@ -57,4 +57,25 @@ describe('repositorio/leilao', () => {
 			expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
 		});
 	});
+
+	describe('obtemLeilao', () => {
+		it('deve retornar um objeto leilao', async () => {
+			apiLeiloes.get.mockImplementation(() => mockRequisicao(mockLeiloes[0]));
+
+			const leilao = await obtemLeilao(1);
+			console.log(leilao);
+			expect(leilao).toEqual(mockLeiloes[0]);
+			expect(apiLeiloes.get).toHaveBeenCalledWith('/leiloes/1');
+			expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
+		});
+
+		it('deve retornar um objeto vazio quando a requisição falhar', async () => {
+			apiLeiloes.get.mockImplementation(() => mockRequisicaoErro());
+
+			const leilao = await obtemLeilao(10);
+			expect(leilao).toEqual({});
+			expect(apiLeiloes.get).toHaveBeenCalledWith('/leiloes/10');
+			expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
+		});
+	});
 });
