@@ -50,7 +50,7 @@ describe('negocio/validadores/lance', () => {
 
 		it('deve retornar "Lance válido" quando o lance for maior do que os já existentes', () => {
 			const resultado = validaLance(2000, { lances, valorInicial });
-			console.log(resultado);
+			expect(resultado).toBe('Lance válido');
 		});
 	});
 });

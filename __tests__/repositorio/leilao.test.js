@@ -63,7 +63,6 @@ describe('repositorio/leilao', () => {
 			apiLeiloes.get.mockImplementation(() => mockRequisicao(mockLeiloes[0]));
 
 			const leilao = await obtemLeilao(1);
-			console.log(leilao);
 			expect(leilao).toEqual(mockLeiloes[0]);
 			expect(apiLeiloes.get).toHaveBeenCalledWith('/leiloes/1');
 			expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
