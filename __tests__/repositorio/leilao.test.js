@@ -26,6 +26,14 @@ const mockRequisicao = (retorno) => {
 	});
 };
 
+const mockRequisicaoErro = () => {
+	return new Promise((_, reject) => {
+		setTimeout(() => {
+			reject();
+		}, 200);
+	});
+};
+
 describe('repositorio/leilao', () => {
 	describe('obtemLeiloes', () => {
 		it('deve retornar uma lista de leilões', async () => {
@@ -33,6 +41,13 @@ describe('repositorio/leilao', () => {
 
 			const leiloes = await obtemLeiloes();
 			expect(leiloes).toEqual(mockLeiloes);
+		});
+
+		it('deve retornar uma lista vazia quando a requisição falhar', async () => {
+			apiLeiloes.get.mockImplementation(() => mockRequisicaoErro());
+
+			const leiloes = await obtemLeiloes();
+			expect(leiloes).toEqual([]);
 		});
 	});
 });
