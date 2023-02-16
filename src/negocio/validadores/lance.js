@@ -17,12 +17,12 @@ export function validaLance(valor, { lances, valorInicial }) {
   const lanceMaiorOuIgualAoInicial = validaLanceMaiorOuIgualAoInicial(valor, valorInicial);
   const lanceMaiorQueLances = validaLanceMaiorQueLances(valor, lances);
   
-  if(lanceMaiorQueLances !== VALIDO) {
-    return lanceMaiorQueLances;
-  }
-  
   if(lanceMaiorOuIgualAoInicial !== VALIDO) {
     return lanceMaiorOuIgualAoInicial;
+  }
+
+  if(lanceMaiorQueLances !== VALIDO) {
+    return lanceMaiorQueLances;
   }
 
   return lanceMaiorQueLances;
