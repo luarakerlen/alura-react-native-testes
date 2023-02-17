@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -148,7 +148,21 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,9 +171,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,8 +178,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,7 +191,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -241,91 +269,105 @@ import Icone from '../../../componentes/Icone';
 import { formataDecimalParaReal } from '../../../negocio/formatadores/moeda';
 import { formataMaiorLanceDoLeilao } from '../../../negocio/formatadores/lance';
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Topo(</span>{ nome, descricao, lances, valorInicial, cor, icone }) {
-  const maiorLance = <span class="cstat-no" title="statement not covered" >formataMaiorLanceDoLeilao(lances, valorInicial);</span>
+export default function Topo({
+	nome,
+	descricao,
+	lances,
+	valorInicial,
+	cor,
+	icone,
+}) {
+	const maiorLance = formataMaiorLanceDoLeilao(lances, valorInicial);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return &lt;&gt;</span>
-    &lt;Icone cor={cor} nome={icone} style={estilos.topo} /&gt;
-    &lt;View style={estilos.info}&gt;
-      &lt;Text style={estilos.nome}&gt;{nome}&lt;/Text&gt;
-      &lt;Text style={estilos.descricao}&gt;{descricao}&lt;/Text&gt;
-      &lt;View style={estilos.resumo}&gt;
-        &lt;View style={estilos.melhorLance}&gt;
-          &lt;Text style={estilos.legendaLance}&gt;Melhor Lance&lt;/Text&gt;
-          &lt;Text style={estilos.valorLance}&gt;{formataDecimalParaReal(maiorLance)}&lt;/Text&gt;
-        &lt;/View&gt;
-        &lt;View style={estilos.divisor} /&gt;
-        &lt;View style={estilos.lanceInicial}&gt;
-          &lt;Text style={estilos.legendaLance}&gt;Valor Inicial&lt;/Text&gt;
-          &lt;Text style={estilos.valorLance}&gt;{formataDecimalParaReal(valorInicial)}&lt;/Text&gt;
-        &lt;/View&gt;
-      &lt;/View&gt;
-    &lt;/View&gt;
-  &lt;/&gt;    
+	return (
+		&lt;&gt;
+			&lt;Icone cor={cor} nome={icone} style={estilos.topo} /&gt;
+			&lt;View style={estilos.info}&gt;
+				&lt;Text style={estilos.nome}&gt;{nome}&lt;/Text&gt;
+				&lt;Text style={estilos.descricao}&gt;{descricao}&lt;/Text&gt;
+				&lt;View style={estilos.resumo}&gt;
+					&lt;View style={estilos.melhorLance}&gt;
+						&lt;Text style={estilos.legendaLance}&gt;Melhor Lance&lt;/Text&gt;
+						&lt;Text style={estilos.valorLance} accessibilityHint='Melhor lance'&gt;
+							{formataDecimalParaReal(maiorLance)}
+						&lt;/Text&gt;
+					&lt;/View&gt;
+					&lt;View style={estilos.divisor} /&gt;
+					&lt;View style={estilos.lanceInicial}&gt;
+						&lt;Text style={estilos.legendaLance}&gt;Valor Inicial&lt;/Text&gt;
+						&lt;Text style={estilos.valorLance} accessibilityHint='Valor Inicial'&gt;
+							{formataDecimalParaReal(valorInicial)}
+						&lt;/Text&gt;
+					&lt;/View&gt;
+				&lt;/View&gt;
+			&lt;/View&gt;
+		&lt;/&gt;
+	);
 }
 &nbsp;
-const estilos = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
-  topo: {
-    paddingTop: 48,
-    paddingBottom: 48 + 24,
-  },
-  info: {
-    flex: 1,
-    marginTop: -24,
-    backgroundColor: '#ffffff',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    padding: 16,
+const estilos = StyleSheet.create({
+	topo: {
+		paddingTop: 48,
+		paddingBottom: 48 + 24,
+	},
+	info: {
+		flex: 1,
+		marginTop: -24,
+		backgroundColor: '#ffffff',
+		borderTopLeftRadius: 24,
+		borderTopRightRadius: 24,
+		padding: 16,
 &nbsp;
-    marginBottom: 8,
-  },
-  nome: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#4A4A4A',
-  },
-  descricao: {
-    fontSize: 16,
-    marginTop: 8,
-    color: '#4A4A4A',
-  },
-  resumo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
+		marginBottom: 8,
+	},
+	nome: {
+		fontSize: 24,
+		fontWeight: 'bold',
+		color: '#4A4A4A',
+	},
+	descricao: {
+		fontSize: 16,
+		marginTop: 8,
+		color: '#4A4A4A',
+	},
+	resumo: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'stretch',
 &nbsp;
-    borderRadius: 8,
-    
-    backgroundColor: '#F3F2F2',
+		borderRadius: 8,
 &nbsp;
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    marginTop: 16,
-  },
-  legendaLance: {
-    fontSize: 14,
-    color: '#4A4A4A',
-  },
-  valorLance: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#4A4A4A',
-  },
-  divisor: {
-    width: 1,
-    backgroundColor: '#e6e6e6',
-  },
-  lanceInicial: {
-    alignItems: 'flex-end',
-  },
-});</pre></td></tr></table></pre>
+		backgroundColor: '#F3F2F2',
+&nbsp;
+		paddingVertical: 16,
+		paddingHorizontal: 24,
+		marginTop: 16,
+	},
+	legendaLance: {
+		fontSize: 14,
+		color: '#4A4A4A',
+	},
+	valorLance: {
+		fontSize: 16,
+		fontWeight: 'bold',
+		color: '#4A4A4A',
+	},
+	divisor: {
+		width: 1,
+		backgroundColor: '#e6e6e6',
+	},
+	lanceInicial: {
+		alignItems: 'flex-end',
+	},
+});
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-17T01:11:27.010Z
+                at 2023-02-17T01:31:04.691Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
