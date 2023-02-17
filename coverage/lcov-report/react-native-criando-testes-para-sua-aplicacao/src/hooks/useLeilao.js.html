@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>9/22</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>9/22</span>
             </div>
         
             
@@ -120,29 +120,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -154,11 +143,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from 'react';
@@ -168,16 +168,16 @@ import { validaLance, validaFormatoNumericoDoLance } from '../negocio/validadore
 import { formataBrasileiroParaDecimal } from '../negocio/formatadores/moeda';
 import { VALIDO, NAO_ENVIADO, ENVIADO } from '../negocio/constantes/estadosLance';
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >useLeilao(</span>id) {
-  const [leilao, setLeilao] = <span class="cstat-no" title="statement not covered" >useState({});</span>
+export default function useLeilao(id) {
+  const [leilao, setLeilao] = useState({});
 &nbsp;
-  const atualizaLeilao = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-    const leilaoAtualizado = <span class="cstat-no" title="statement not covered" >await obtemLeilao(id);</span>
-    const lancesAtualizados = <span class="cstat-no" title="statement not covered" >await obtemLancesDoLeilao(id);</span>
-<span class="cstat-no" title="statement not covered" >    setLeilao({ ...leilaoAtualizado, lances: lancesAtualizados });</span>
+  const atualizaLeilao = async () =&gt; {
+    const leilaoAtualizado = await obtemLeilao(id);
+    const lancesAtualizados = await obtemLancesDoLeilao(id);
+    setLeilao({ ...leilaoAtualizado, lances: lancesAtualizados });
   };
   
-  const enviaLance = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync (valor) =&gt; {</span>
+  const enviaLance = <span class="fstat-no" title="function not covered" >as</span>ync (valor) =&gt; {
     const estadoFormatoLance = <span class="cstat-no" title="statement not covered" >validaFormatoNumericoDoLance(valor);</span>
 <span class="cstat-no" title="statement not covered" >    if (estadoFormatoLance !== VALIDO) {</span>
 <span class="cstat-no" title="statement not covered" >      return estadoFormatoLance;</span>
@@ -203,11 +203,11 @@ export default function <span class="fstat-no" title="function not covered" >use
 <span class="cstat-no" title="statement not covered" >    return NAO_ENVIADO;</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    atualizaLeilao();</span>
+  useEffect(() =&gt; {
+    atualizaLeilao();
   }, []);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return [ leilao, atualizaLeilao, enviaLance ];</span>
+  return [ leilao, atualizaLeilao, enviaLance ];
 }
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
@@ -217,7 +217,7 @@ export default function <span class="fstat-no" title="function not covered" >use
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-17T16:12:41.617Z
+                at 2023-02-17T16:39:39.366Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
