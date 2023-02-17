@@ -1,7 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import Leilao from '../../../../src/telas/ListaLeiloes/componentes/Leilao';
-// import { useNavigation } from '@react-navigation/native';
 
 const mockedNavigate = jest.fn();
 jest.mock('@react-navigation/native', () => {
@@ -45,7 +44,3 @@ describe('telas/ListaLeiloes/componentes/Leilao', () => {
 		expect(mockedNavigate).toHaveBeenCalledWith('Leilao', { id: 1 });
 	});
 });
-
-// describe('', () => {
-// 	it('', () => {});
-// });

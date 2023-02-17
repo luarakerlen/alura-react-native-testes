@@ -5,29 +5,30 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import Leilao from './componentes/Leilao';
 
 export default function ListaLeiloes() {
-  const [leiloes, obtemLeiloes] = useListaLeiloes();
-  const [carregando, setCarregando] = useState(false);
-  
-  const atualizaLista = async () => {
-    setCarregando(true);
-    await obtemLeiloes();
-    setCarregando(false);
-  };
+	const [leiloes, obtemLeiloes] = useListaLeiloes();
+	const [carregando, setCarregando] = useState(false);
 
-  return (
-    <FlatList
-      data={leiloes}
-      keyExtractor={item => item.id.toString()}
-      renderItem={({ item }) => <Leilao {...item} />}
-      onRefresh={atualizaLista}
-      refreshing={carregando}
-      contentContainerStyle={estilos.lista}
-    />
-  );
+	const atualizaLista = async () => {
+		setCarregando(true);
+		await obtemLeiloes();
+		setCarregando(false);
+	};
+
+	return (
+		<FlatList
+			testID='flatlist-id'
+			data={leiloes}
+			keyExtractor={(item) => item.id.toString()}
+			renderItem={({ item }) => <Leilao {...item} />}
+			onRefresh={atualizaLista}
+			refreshing={carregando}
+			contentContainerStyle={estilos.lista}
+		/>
+	);
 }
 
 const estilos = StyleSheet.create({
-  lista: {
-    paddingVertical: 8,
-  },
+	lista: {
+		paddingVertical: 8,
+	},
 });
