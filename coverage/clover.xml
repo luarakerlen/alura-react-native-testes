@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676651979417" clover="3.2.0">
-  <project timestamp="1676651979417" name="All files">
+<coverage generated="1676652528669" clover="3.2.0">
+  <project timestamp="1676652528670" name="All files">
     <metrics statements="140" coveredstatements="125" conditionals="41" coveredconditionals="28" methods="42" coveredmethods="40" elements="223" coveredelements="193" complexity="0" loc="140" ncloc="140" packages="13" files="19" classes="19"/>
     <package name="react-native-criando-testes-para-sua-aplicacao">
       <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -28,12 +28,12 @@
       <metrics statements="29" coveredstatements="16" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="6"/>
       <file name="useLeilao.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/hooks/useLeilao.js">
         <metrics statements="22" coveredstatements="9" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
@@ -47,9 +47,9 @@
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
       </file>
       <file name="useListaLeiloes.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/hooks/useListaLeiloes.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
