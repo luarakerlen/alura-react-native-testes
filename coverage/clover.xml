@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676597464786" clover="3.2.0">
-  <project timestamp="1676597464786" name="All files">
-    <metrics statements="141" coveredstatements="93" conditionals="41" coveredconditionals="24" methods="42" coveredmethods="29" elements="224" coveredelements="146" complexity="0" loc="141" ncloc="141" packages="13" files="19" classes="19"/>
+<coverage generated="1676598912612" clover="3.2.0">
+  <project timestamp="1676598912612" name="All files">
+    <metrics statements="141" coveredstatements="95" conditionals="41" coveredconditionals="25" methods="42" coveredmethods="30" elements="224" coveredelements="150" complexity="0" loc="141" ncloc="141" packages="13" files="19" classes="19"/>
     <package name="react-native-criando-testes-para-sua-aplicacao">
       <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/App.js">
@@ -11,11 +11,11 @@
       </file>
     </package>
     <package name="react-native-criando-testes-para-sua-aplicacao.src.componentes">
-      <metrics statements="5" coveredstatements="5" conditionals="5" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <metrics statements="5" coveredstatements="5" conditionals="5" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="Cartao.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/componentes/Cartao.js">
-        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
       </file>
       <file name="Icone.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/componentes/Icone.js">
         <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -179,7 +179,7 @@
       </file>
     </package>
     <package name="react-native-criando-testes-para-sua-aplicacao.src.telas.Leilao.componentes">
-      <metrics statements="23" coveredstatements="21" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
+      <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
       <file name="EnviaLance.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/telas/Leilao/componentes/EnviaLance.js">
         <metrics statements="18" coveredstatements="18" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="15" count="11" type="stmt"/>
@@ -202,9 +202,9 @@
         <line num="66" count="11" type="stmt"/>
       </file>
       <file name="Lance.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/telas/Leilao/componentes/Lance.js">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
       <file name="Topo.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/telas/Leilao/componentes/Topo.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -217,8 +217,8 @@
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="index.js" path="/Users/luararangel/Documents/Profissional/Cursos/Alura/react-native-criando-testes-para-sua-aplicacao/src/telas/ListaLeiloes/index.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
         <line num="11" count="4" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
