@@ -1,6 +1,10 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import useLeilao from '../../src/hooks/useLeilao';
-import { obtemLancesDoLeilao } from '../../src/repositorio/lance';
+import { ENVIADO, INVALIDO, MENOR_OU_IGUAL_AOS_LANCES, MENOR_QUE_VALOR_INICIAL, NAO_ENVIADO } from '../../src/negocio/constantes/estadosLance';
+import {
+	adicionaLance,
+	obtemLancesDoLeilao,
+} from '../../src/repositorio/lance';
 import { obtemLeilao } from '../../src/repositorio/leilao';
 
 jest.mock('../../src/repositorio/lance');
@@ -72,6 +76,73 @@ describe('hooks/useLeilao', () => {
 		expect(result.current[0]).toEqual({
 			...mockLeilaoAtualizado,
 			lances: mockLancesDoLeilaoAtualizado,
+		});
+	});
+
+	describe('quando é feita uma tentativa de enviar lance, o terceiro parâmetro', () => {
+		it('deve enviar um lance válido se for válido', async () => {
+			adicionaLance.mockReturnValue(true);
+
+			const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+			await waitForNextUpdate();
+
+			let statusLance;
+			await act(async () => (statusLance = await result.current[2]('300')));
+
+			expect(statusLance).toEqual(ENVIADO);
+			expect(adicionaLance).toHaveBeenCalledWith({
+				leilaoId: mockLeilao.id,
+				valor: 300,
+			});
+		});
+
+		it('deve rejeitar o lance caso o valor não for numérico', async () => {
+			const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+			await waitForNextUpdate();
+
+			let statusLance;
+			await act(async () => (statusLance = await result.current[2]('a')));
+
+			expect(statusLance).toEqual(INVALIDO);
+			expect(adicionaLance).not.toHaveBeenCalled();
+		});
+
+    it('deve rejeitar o lance caso o valor for menor ou igual a outros lances', async () => {
+			const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+			await waitForNextUpdate();
+
+			let statusLance;
+			await act(async () => (statusLance = await result.current[2]('110')));
+
+			expect(statusLance).toEqual(MENOR_OU_IGUAL_AOS_LANCES);
+			expect(adicionaLance).not.toHaveBeenCalled();
+		});
+
+    it('deve rejeitar o lance caso o valor for menor que o valor inicial', async () => {
+			const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+			await waitForNextUpdate();
+
+			let statusLance;
+			await act(async () => (statusLance = await result.current[2]('50')));
+
+			expect(statusLance).toEqual(MENOR_QUE_VALOR_INICIAL);
+			expect(adicionaLance).not.toHaveBeenCalled();
+		});
+
+    it('deve rejeitar o lance caso adicionaLance retornar false', async () => {
+			adicionaLance.mockReturnValue(false);
+
+			const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+			await waitForNextUpdate();
+
+			let statusLance;
+			await act(async () => (statusLance = await result.current[2]('300')));
+
+			expect(statusLance).toEqual(NAO_ENVIADO);
+			expect(adicionaLance).toHaveBeenCalledWith({
+				leilaoId: mockLeilao.id,
+				valor: 300,
+			});
 		});
 	});
 });
