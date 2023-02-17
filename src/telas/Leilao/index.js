@@ -8,48 +8,50 @@ import Lance from './componentes/Lance';
 import EnviaLance from './componentes/EnviaLance';
 
 export default function Leilao() {
-  const route = useRoute();
-  const [carregando, setCarregando] = useState(false);
+	const route = useRoute();
+	const [carregando, setCarregando] = useState(false);
 
-  const id = route.params.id;
-  const [ leilao, obtemLeilao, enviaLance ] = useLeilao(id);
-  
-  const novoLance = async (valor) => {
-    const estadoLance = await enviaLance(valor);
-    if (estadoLance.valido)
-      await atualizaLeilao();
+	const id = route.params.id;
+	const [leilao, obtemLeilao, enviaLance] = useLeilao(id);
 
-    return estadoLance;
-  }
+	const novoLance = async (valor) => {
+		const estadoLance = await enviaLance(valor);
+		if (estadoLance.valido) await atualizaLeilao();
 
-  const atualizaLeilao = async () => {
-    setCarregando(true);
-    await obtemLeilao();
-    setCarregando(false);
-  };
+		return estadoLance;
+	};
 
-  if (!leilao.nome) {
-    return <View />
-  }
+	const atualizaLeilao = async () => {
+		setCarregando(true);
+		await obtemLeilao();
+		setCarregando(false);
+	};
 
-  return <>
-    <FlatList
-      data={leilao.lances}
-      keyExtractor={(leilao) => leilao.id}
-      renderItem={({ item }) => <Lance {...item} cor={leilao.cor} />}
-      ListHeaderComponent={() => <Topo {...leilao} />}
-      onRefresh={atualizaLeilao}
-      refreshing={carregando}
-      contentContainerStyle={estilos.lista}
-    />
-    <EnviaLance cor={leilao.cor} enviaLance={novoLance} />
-  </>
+	if (!leilao.nome) {
+		return <View />;
+	}
+
+	return (
+		<>
+			<FlatList
+				testID='flatlist-id'
+				data={leilao.lances}
+				keyExtractor={(leilao) => leilao.id}
+				renderItem={({ item }) => <Lance {...item} cor={leilao.cor} />}
+				ListHeaderComponent={() => <Topo {...leilao} />}
+				onRefresh={atualizaLeilao}
+				refreshing={carregando}
+				contentContainerStyle={estilos.lista}
+			/>
+			<EnviaLance cor={leilao.cor} enviaLance={novoLance} />
+		</>
+	);
 }
 
 const estilos = StyleSheet.create({
-  lista: {
-    /* Padding para evitar que o último item da lista
+	lista: {
+		/* Padding para evitar que o último item da lista
     fique por baixo do formulário de envio de lance */
-    paddingBottom: 110,
-  },
+		paddingBottom: 110,
+	},
 });
