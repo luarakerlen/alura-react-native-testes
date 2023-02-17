@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render } from '@testing-library/react-native';
+import { act, render, waitFor } from '@testing-library/react-native';
 import ListaLeiloes from '../../../src/telas/ListaLeiloes';
 import Leilao from '../../../src/telas/ListaLeiloes/componentes/Leilao';
 import { Text } from 'react-native';
@@ -33,7 +33,7 @@ describe('telas/ListaLeiloes', () => {
 		expect(mockObtemLeiloes).not.toHaveBeenCalled();
 	});
 
-	it('deve atualizar a lista quando recarrega a tela', () => {
+	it('deve atualizar a lista quando recarrega a tela', async () => {
 		const { getByTestId } = render(<ListaLeiloes />);
 		const flatlist = getByTestId('flatlist-id');
 
@@ -41,10 +41,6 @@ describe('telas/ListaLeiloes', () => {
 			flatlist.props.onRefresh();
 		});
 
-		expect(mockObtemLeiloes).toHaveBeenCalledTimes(1);
+		await waitFor(() => expect(mockObtemLeiloes).toHaveBeenCalledTimes(1));
 	});
 });
-
-// describe('', () => {
-// 	it('', () => {});
-// });
