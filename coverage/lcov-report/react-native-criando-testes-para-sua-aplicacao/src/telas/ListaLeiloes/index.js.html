@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,35 +96,37 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,32 +137,33 @@ import useListaLeiloes from '../../hooks/useListaLeiloes';
 import { View, FlatList, StyleSheet } from 'react-native';
 import Leilao from './componentes/Leilao';
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >ListaLeiloes(</span>) {
-  const [leiloes, obtemLeiloes] = <span class="cstat-no" title="statement not covered" >useListaLeiloes();</span>
-  const [carregando, setCarregando] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
-  
-  const atualizaLista = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setCarregando(true);</span>
-<span class="cstat-no" title="statement not covered" >    await obtemLeiloes();</span>
-<span class="cstat-no" title="statement not covered" >    setCarregando(false);</span>
-  };
+export default function ListaLeiloes() {
+	const [leiloes, obtemLeiloes] = useListaLeiloes();
+	const [carregando, setCarregando] = useState(false);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;FlatList
-      data={leiloes}
-      keyExtractor={<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id.toString()}</span>
-      renderItem={<span class="fstat-no" title="function not covered" >({</span> item }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;Leilao {...item} /&gt;}</span>
-      onRefresh={atualizaLista}
-      refreshing={carregando}
-      contentContainerStyle={estilos.lista}
-    /&gt;
-  );
+	const atualizaLista = async () =&gt; {
+		setCarregando(true);
+		await obtemLeiloes();
+		setCarregando(false);
+	};
+&nbsp;
+	return (
+		&lt;FlatList
+			testID='flatlist-id'
+			data={leiloes}
+			keyExtractor={(item) =&gt; item.id.toString()}
+			renderItem={({ item }) =&gt; &lt;Leilao {...item} /&gt;}
+			onRefresh={atualizaLista}
+			refreshing={carregando}
+			contentContainerStyle={estilos.lista}
+		/&gt;
+	);
 }
 &nbsp;
-const estilos = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
-  lista: {
-    paddingVertical: 8,
-  },
+const estilos = StyleSheet.create({
+	lista: {
+		paddingVertical: 8,
+	},
 });
 &nbsp;</pre></td></tr></table></pre>
 
@@ -169,7 +172,7 @@ const estilos = <span class="cstat-no" title="statement not covered" >StyleSheet
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-17T00:43:44.682Z
+                at 2023-02-17T01:11:27.010Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
