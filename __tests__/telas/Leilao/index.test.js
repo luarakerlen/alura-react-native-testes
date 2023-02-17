@@ -95,4 +95,11 @@ describe('telas/Leilao', () => {
 
 		await waitFor(() => expect(mockObtemLeilao).toHaveBeenCalledTimes(1));
 	});
+
+  it('não deve crashar quando o leilão estiver estiver carregando', async () => {
+    useLeilao.mockImplementation(() => ([[]]));
+    const { getByTestId } = render(<Leilao />);
+
+    expect(() => getByTestId('flatlist-id')).toThrow();
+  });
 });
