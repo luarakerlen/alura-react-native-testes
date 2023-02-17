@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import useLeilao from '../../src/hooks/useLeilao';
 import { obtemLancesDoLeilao } from '../../src/repositorio/lance';
 import { obtemLeilao } from '../../src/repositorio/leilao';
@@ -52,6 +52,26 @@ describe('hooks/useLeilao', () => {
 		expect(result.current[0]).toEqual({
 			...mockLeilao,
 			lances: mockLancesDoLeilao,
+		});
+	});
+
+	it('deve retornar uma função pra atualizar o leilão como segundo parâmetro', async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useLeilao(1));
+		await waitForNextUpdate();
+
+		obtemLeilao.mockReturnValue(mockLeilaoAtualizado);
+		obtemLancesDoLeilao.mockReturnValue(mockLancesDoLeilaoAtualizado);
+
+		expect(result.current[0]).toEqual({
+			...mockLeilao,
+			lances: mockLancesDoLeilao,
+		});
+
+		await act(() => result.current[1]());
+
+		expect(result.current[0]).toEqual({
+			...mockLeilaoAtualizado,
+			lances: mockLancesDoLeilaoAtualizado,
 		});
 	});
 });
